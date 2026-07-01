@@ -6,6 +6,7 @@ import fr.simplon.backend.model.enums.ResourceType;
 import fr.simplon.backend.repository.ResourceRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,6 +16,14 @@ public class ResourceService {
 
     public ResourceService(ResourceRepository resourceRepositoryinjected) {
         this.resourceRepositoryinjected = resourceRepositoryinjected;
+    }
+
+    public List<Resource> findAll() {
+        return this.resourceRepositoryinjected.findAll();
+    }
+
+    public Resource create(Resource resource) {
+        return this.resourceRepositoryinjected.save(resource);
     }
 
     public Optional<Resource> findById(Long resourceId) {
