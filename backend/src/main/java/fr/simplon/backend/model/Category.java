@@ -28,5 +28,5 @@ public class Category {
     private String description;
     
     @OneToMany(mappedBy = "category")
-    private List<Ressource> ressources;
+    private List<Resource> resources;
 }
