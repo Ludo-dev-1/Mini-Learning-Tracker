@@ -1,18 +1,22 @@
 package fr.simplon.backend.usecases;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 
 import fr.simplon.backend.model.Category;
 import fr.simplon.backend.service.CategoryService;
 
-public class categoryUsecase {
-    CategoryService cs;
-    // All categories, new category
+@Component
+public class CategoryUsecase {
+
+    private CategoryService cs;
+    public CategoryUsecase(CategoryService cs) {
+        this.cs = cs;
+    }
+
     public ResponseEntity<List<Category>> allCategories() {
         List<Category> categoryList = cs.findAll();
 
