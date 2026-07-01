@@ -24,7 +24,7 @@ public class CategoryService {
         return categoryRepoInjected.findAll();
     }
 
-    public void createCategory(Category newCategory) {
-        categoryRepoInjected.save(newCategory);
+    public Category createCategory(Category newCategory) {
+        return categoryRepoInjected.save(newCategory);
     }
 }
