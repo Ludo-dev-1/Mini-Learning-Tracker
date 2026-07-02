@@ -6,6 +6,8 @@ import fr.simplon.backend.model.enums.ResourceType;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "resource")
 @Data
@@ -30,6 +32,9 @@ public class Resource {
 
     @Column(nullable = false)
     private ResourceStatus status;
+
+    @Column(nullable = false)
+    private LocalDateTime created_at;
 
     @ManyToOne
     private Category category;

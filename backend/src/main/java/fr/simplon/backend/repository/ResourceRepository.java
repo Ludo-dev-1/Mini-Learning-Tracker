@@ -12,7 +12,7 @@ import java.util.Optional;
 @Repository
 public interface ResourceRepository extends JpaRepository<Resource, Long> {
 
-    Optional<Resource> findByType(ResourceType type);
+    List<Resource> findByType(ResourceType type);
 
-    Optional<Resource> findByStatus(ResourceStatus status);
+    List<Resource> findByStatus(ResourceStatus status);
 }
