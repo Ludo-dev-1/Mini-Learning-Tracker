@@ -5,10 +5,12 @@ import {CardCategory} from "./component/CardCategory.tsx";
 function App() {
 
 
+
   return (
     <>
     <CardCategory />
     </>
+
   )
 }
 
