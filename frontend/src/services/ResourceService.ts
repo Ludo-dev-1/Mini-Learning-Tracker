@@ -17,7 +17,8 @@ export async function getRessourceById(id: number) {
     .catch((err) => err.message);
 }
 
-type Resource = {
+export type Resource = {
+  id:number;
   title: string;
   description: string;
   url: string;
@@ -34,3 +35,11 @@ export async function postResource(r: Resource) {
   }).catch(err => err.message);
 }
 console.log("check");
+
+
+
+export async function getRessourceByType(type: string) {
+  return await fetch(server_url + endpoint + "/type?type=" + type)
+      .then((resp) => resp.json())
+      .catch((err) => err.message);
+}
