@@ -1,6 +1,5 @@
 package fr.simplon.backend.model;
 
-
 import fr.simplon.backend.model.enums.ResourceStatus;
 import fr.simplon.backend.model.enums.ResourceType;
 import jakarta.persistence.*;
@@ -8,11 +7,12 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "resource")
 @Data
 public class Resource {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
@@ -36,6 +36,7 @@ public class Resource {
     @Column(nullable = false)
     private LocalDateTime created_at;
 
+    @JsonBackReference
     @ManyToOne
     private Category category;
 }
