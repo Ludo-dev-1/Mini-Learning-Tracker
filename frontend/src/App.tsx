@@ -1,12 +1,16 @@
+
 import './App.css'
+import {CardCategory} from "./component/CardCategory.tsx";
 
 function App() {
 
 
-  return (
-      <>
 
-      </>
+  return (
+    <>
+    <CardCategory />
+    </>
+
   )
 }
 
