@@ -30,11 +30,9 @@ public class ResourceService {
         return this.resourceRepositoryinjected.findById(resourceId);
     }
 
-
     public List<Resource> findByType(ResourceType resourceType) {
         return this.resourceRepositoryinjected.findByType(resourceType);
     }
-
 
     public List<Resource> findByStatus(ResourceStatus resourceStatus) {
         return this.resourceRepositoryinjected.findByStatus(resourceStatus);
