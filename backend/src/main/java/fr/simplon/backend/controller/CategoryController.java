@@ -33,7 +33,7 @@ public class CategoryController {
         return cu.allCategories();
     }
 
-    @PostMapping("/new")
+    @PostMapping("")
     public ResponseEntity<Category> postNewCategory(@RequestBody Category newCategory) {
         return cu.createCategory(newCategory);
     }
