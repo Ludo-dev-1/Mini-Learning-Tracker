@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import {getResources, getRessourceByType, type Resource} from "../services/ResourceService.ts";
+import'../style/ResourceList.css'
 
-export function SelectResourceByType() {
+export function ResourceList() {
     const [resources, setResources] = useState([]);
     const [selectedType, setSelectedType] = useState("");
 
@@ -23,7 +24,7 @@ export function SelectResourceByType() {
                 <option value="VIDEO">Vidéo</option>
                 <option value="ARTICLE">Article</option>
                 <option value="DOCUMENTATION">Documentation</option>
-                <option value="COURSES">Cours</option>
+                <option value="COURSE">Cours</option>
                 <option value="OTHER">Autre</option>
             </select>
 

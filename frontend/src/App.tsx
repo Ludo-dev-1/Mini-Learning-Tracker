@@ -1,12 +1,12 @@
 import './App.css'
-import {SelectResourceByType} from "./component/SelectResourceByType.tsx";
+import {ResourceList} from "./component/ResourceList.tsx";
 
 
 function App() {
 
   return (
     <>
-      <SelectResourceByType />
+      <ResourceList />
     </>
 
   )
