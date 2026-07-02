@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.simplon.backend.model.Category;
 import fr.simplon.backend.service.CategoryService;
 import fr.simplon.backend.usecases.CategoryUsecase;
-import fr.simplon.backend.usecases.categoryUsecase;
+
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,13 +20,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
+@RequestMapping("/api/categories")
 public class CategoryController {
     private CategoryUsecase cu;
     public CategoryController(CategoryUsecase cu) {
         this.cu = cu;
     }
 
-    @RequestMapping("/categories")
+
 
     @GetMapping("")
     public ResponseEntity<List<Category>> getAllCategories() {
