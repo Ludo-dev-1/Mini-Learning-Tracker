@@ -1,3 +1,4 @@
+
 import './App.css'
 import {CardCategory} from "./component/CardCategory.tsx";
 import {useState} from "react";
@@ -30,6 +31,8 @@ function App() {
 
 
     <CardCategory />
+      <CardCategory />
+      <CreateCategory />
     </>
 
   )

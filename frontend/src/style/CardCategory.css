@@ -1,0 +1,44 @@
+/* Container de la liste */
+.category-list {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Chaque catégorie */
+.category-item {
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    border: 1px solid rgba(200, 200, 200, 0.4);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+/* Effet hover moderne */
+.category-item:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.8);
+    border-color: #6c63ff;
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2);
+}
+
+/* Animation d’apparition */
+.category-item {
+    opacity: 0;
+    animation: fadeIn 0.4s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
