@@ -20,13 +20,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
+@RequestMapping("/categories")
 public class CategoryController {
     private CategoryUsecase cu;
     public CategoryController(CategoryUsecase cu) {
         this.cu = cu;
     }
-
-    @RequestMapping("/categories")
 
     @GetMapping("")
     public ResponseEntity<List<Category>> getAllCategories() {
