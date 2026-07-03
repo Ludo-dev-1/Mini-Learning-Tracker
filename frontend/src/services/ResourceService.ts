@@ -4,6 +4,7 @@
 
 import type { Resource } from "../models/Resource";
 
+
 const  server_url: string = "http://localhost:8080/api/";
 const endpoint: string = "resources";
 
@@ -19,7 +20,6 @@ export async function getRessourceById(id: number) {
     .catch((err) => err.message);
 }
 
-
 export async function postResource(r: Resource) {
   return await fetch(server_url, {
     method: "POST",
@@ -29,9 +29,14 @@ export async function postResource(r: Resource) {
 console.log("check");
 
 
-
-export async function getRessourceByType(type: string) {
+export async function getResourceByType(type: string) {
   return await fetch(server_url + endpoint + "/type?type=" + type)
+      .then((resp) => resp.json())
+      .catch((err) => err.message);
+}
+
+export async function getResourceByStatus(status: string) {
+  return await fetch(server_url + endpoint + "/status?status=" + status)
       .then((resp) => resp.json())
       .catch((err) => err.message);
 }
