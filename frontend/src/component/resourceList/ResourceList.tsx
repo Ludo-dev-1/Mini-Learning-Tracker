@@ -10,7 +10,7 @@ export function ResourceList() {
   useEffect(() => {
     getResources().then((r) => setResourceList(r));
   }, []);
-
+  
   return (
     <section className={styles.resourceList}>
       <h1> Mes ressources </h1>
