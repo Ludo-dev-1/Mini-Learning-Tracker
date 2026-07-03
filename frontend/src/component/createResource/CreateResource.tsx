@@ -8,8 +8,10 @@ import { postResource } from "../../services/ResourceService";
 import { getCategories, type Category } from "../../services/CategoryService";
 import { useEffect, useState } from "react";
 
+import '../../style/CreateResource.css'
+
 export function CreateResourceForm() {
-  const { register, handleSubmit } = useForm<Resource>();
+  const { register, handleSubmit, reset } = useForm<Resource>();
   const [categoryList, setCategoryList] = useState<Category[]>();
   const [reloadCategories, setReloadCategories] = useState<boolean>(false);
 
@@ -17,6 +19,8 @@ export function CreateResourceForm() {
     const datetime = new Date().toISOString().slice(0, 19);
     data.created_at = datetime;
     postResource(data);
+    alert("Ressource créée avec succès !")
+    reset();
   };
 
   useEffect(() => {
@@ -46,14 +50,14 @@ export function CreateResourceForm() {
       <label htmlFor="type">Type de ressource :</label>
       <select {...register("type")} {...register("type")}>
         {Object.keys(ResourceType).map((e) => (
-          <option value={e}>{e}</option>
+          <option key={e} value={e}>{e}</option>
         ))}
       </select>
 
       <label htmlFor="status">Status de la ressource :</label>
       <select {...register("status")}>
         {Object.keys(ResourceStatus).map((e) => (
-          <option value={e}>{e}</option>
+          <option key={e} value={e}>{e}</option>
         ))}
       </select>
 
@@ -63,7 +67,7 @@ export function CreateResourceForm() {
         onClick={() => setReloadCategories(true)}
       >
         {categoryList?.map((c) => (
-          <option value={c.id}>{c.name}</option>
+          <option key={c.id} value={c.id}>{c.name}</option>
         ))}
       </select>
 

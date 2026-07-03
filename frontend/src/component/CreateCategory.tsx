@@ -3,12 +3,13 @@ import { type Category, postCategory } from "../services/CategoryService.ts";
 import "../style/CreateCategory.css";
 
 export function CreateCategory() {
-    const { register, handleSubmit, formState: { errors } } = useForm<Category>();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<Category>();
 
     const onSubmit = async (data: Category) => {
         try {
             await postCategory(data);
-            alert("Formulaire envoyé avec succès !");
+            alert("Catégorie créée avec succès !");
+            reset();
         } catch (error) {
             console.error("Erreur lors de l'envoi :", error);
             alert("Une erreur est survenue.");
