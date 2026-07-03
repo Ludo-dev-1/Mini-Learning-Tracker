@@ -1,12 +1,16 @@
 import './App.css'
-import {ResourceList} from "./component/ResourceList.tsx";
+import {ResourceListSelected} from "./component/ResourceListSelected.tsx";
+import {CreateCategory} from "./component/CreateCategory.tsx";
+import {CardCategory} from "./component/CardCategory.tsx";
 
 
 function App() {
 
   return (
     <>
-      <ResourceList />
+        <ResourceListSelected />
+        <CreateCategory/>
+        <CardCategory />
     </>
 
   )

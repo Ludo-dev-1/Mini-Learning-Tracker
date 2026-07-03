@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import {getResources, getRessourceByType, type Resource} from "../services/ResourceService.ts";
-import'../style/ResourceList.css'
+import'../style/ResourceListSelected.css'
 
-export function ResourceList() {
+export function ResourceListSelected() {
     const [resources, setResources] = useState([]);
     const [selectedType, setSelectedType] = useState("");
 
