@@ -3,6 +3,7 @@ import type { Resource } from "../../models/Resource";
 import {getResources, getRessourceByType} from "../../services/ResourceService";
 import styles from "./styles.module.css";
 import '../../style/ResourceListSelected.css'
+import {Link} from "react-router";
 
 export function ResourceList() {
   const [resourceList, setResourceList] =
@@ -42,7 +43,9 @@ export function ResourceList() {
               <ul>
                   {resourceList?.map((res) => (
                       <li key={res.id}>
-                          <h2><a href="">{res.title}</a></h2>
+                          <Link to={`/resources/${res.id}`}>
+                              <h2 className={styles.title}>{res.title}</h2>
+                          </Link>
                           <section className={styles.tags}>
                               <p className={`${styles.statusTag} ${styles.tag}`}>
                                   {res.status}
