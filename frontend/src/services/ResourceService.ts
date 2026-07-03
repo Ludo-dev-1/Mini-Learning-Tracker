@@ -2,6 +2,8 @@
 // GET    /api/resources/{resourceId}
 // POST   /api/resources
 
+import type { Resource } from "../models/Resource";
+
 let server_url: string = "http://localhost:8080/api/";
 let endpoint: string = "resources";
 
@@ -17,6 +19,7 @@ export async function getRessourceById(id: number) {
     .catch((err) => err.message);
 }
 
+
 export type Resource = {
   id:number;
   title: string;
@@ -27,6 +30,7 @@ export type Resource = {
   created_at: string;
   category: number;
 };
+
 
 export async function postResource(r: Resource) {
   return await fetch(server_url, {
