@@ -21,12 +21,15 @@ export async function getRessourceById(id: number) {
 }
 
 export async function postResource(r: Resource) {
-  return await fetch(server_url, {
+  return await fetch(server_url + endpoint, {
     method: "POST",
-    body: JSON.stringify({ r }),
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(r),
   }).catch(err => err.message);
 }
-console.log("check");
 
 
 export async function getResourceByType(type: string) {

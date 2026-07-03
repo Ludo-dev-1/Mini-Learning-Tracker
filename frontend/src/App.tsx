@@ -1,15 +1,18 @@
+import "./App.css";
 import './App.css'
 
-import {CardCategory} from "./component/CardCategory.tsx";
-import { ResourceList } from './component/resourceList/ResourceList.tsx';
-import {CreateCategory} from "./component/CreateCategory.tsx";
-import { ResourceDetails } from './component/resourceDetails/ResourceDetails.tsx';
 import {Link, Route, Routes} from "react-router";
 
+import {CreateCategory} from "./component/CreateCategory.tsx";
+import {CardCategory} from "./component/CardCategory.tsx";
 
+import { ResourceList } from './component/resourceList/ResourceList.tsx';
+import { ResourceListSelected } from "./component/ResourceListSelected.tsx";
+import { ResourceList } from "./component/resourceList/ResourceList.tsx";
+import { CreateResourceForm } from "./component/createResource/CreateResource.tsx";
+import { ResourceDetails } from './component/resourceDetails/ResourceDetails.tsx';
 
 function App() {
-
   return (
       <>
         <header className="navbar">
@@ -34,4 +37,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
