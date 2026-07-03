@@ -19,6 +19,19 @@ export async function getRessourceById(id: number) {
     .catch((err) => err.message);
 }
 
+
+export type Resource = {
+  id:number;
+  title: string;
+  description: string;
+  url: string;
+  type: string;
+  status: string;
+  created_at: string;
+  category: number;
+};
+
+
 export async function postResource(r: Resource) {
   return await fetch(server_url, {
     method: "POST",
@@ -26,3 +39,11 @@ export async function postResource(r: Resource) {
   }).catch(err => err.message);
 }
 console.log("check");
+
+
+
+export async function getRessourceByType(type: string) {
+  return await fetch(server_url + endpoint + "/type?type=" + type)
+      .then((resp) => resp.json())
+      .catch((err) => err.message);
+}

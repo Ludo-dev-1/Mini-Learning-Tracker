@@ -1,0 +1,59 @@
+.resource-filter {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(180, 180, 180, 0.5);
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: all 0.25s ease;
+}
+
+.resource-filter:focus {
+    outline: none;
+    border-color: #6c63ff;
+    box-shadow: 0 0 8px rgba(108, 99, 255, 0.4);
+}
+/* Liste des resources */
+.resource-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Chaque item */
+.resource-list li {
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    border: 1px solid rgba(200, 200, 200, 0.4);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 0.35s forwards;
+}
+
+/* Hover moderne */
+.resource-list li:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.75);
+    border-color: #6c63ff;
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.25);
+}
+
+/* Animation d’apparition */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

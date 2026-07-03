@@ -48,6 +48,7 @@ export function CreateCategory() {
                 )}
             </div>
 
+
             <button type="submit">Envoyer</button>
         </form>
 
