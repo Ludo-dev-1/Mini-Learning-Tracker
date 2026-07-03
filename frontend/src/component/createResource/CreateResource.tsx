@@ -16,7 +16,6 @@ export function CreateResourceForm() {
   const submitAction: SubmitHandler<Resource> = (data) => {
     const datetime = new Date().toISOString().slice(0, 19);
     data.created_at = datetime;
-    alert(JSON.stringify(data));
     postResource(data);
   };
 
