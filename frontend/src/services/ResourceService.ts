@@ -21,7 +21,6 @@ export async function getRessourceById(id: number) {
 }
 
 export async function postResource(r: Resource) {
-  alert(JSON.stringify(r));
   return await fetch(server_url + endpoint, {
     method: "POST",
     headers: {
