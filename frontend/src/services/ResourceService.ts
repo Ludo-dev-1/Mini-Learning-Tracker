@@ -4,7 +4,8 @@
 
 import type { Resource } from "../models/Resource";
 
-const server_url: string = "http://localhost:8080/api/";
+
+const  server_url: string = "http://localhost:8080/api/";
 const endpoint: string = "resources";
 
 export async function getResources() {
@@ -18,8 +19,6 @@ export async function getRessourceById(id: number) {
     .then((resp) => resp.json())
     .catch((err) => err.message);
 }
-
-
 
 export async function postResource(r: Resource) {
   return await fetch(server_url, {
